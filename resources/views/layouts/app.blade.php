@@ -19,6 +19,10 @@
 		@include('layouts._header')
 
 		<div class="container">
+
+			<!-- 引入报错信息 -->
+			@include('layouts._message')
+			
 			<!-- 内容部分的继承 -->
 			@yield('content')
 
