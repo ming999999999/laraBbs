@@ -17,8 +17,6 @@ Route::post('logout','Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
 
-
-
 // 密碼重置路由
 Route::get('password/reset','Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email','Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
