@@ -14,6 +14,26 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 LaraBBS
             </a>
+
+            <a class="navbar-brand" href="{{ url('topic') }}">
+                话题
+            </a>
+
+            <a class="navbar-brand" href="{{ url('categories') }}">
+               分享
+            </a>
+
+            <a class="navbar-brand" href="{{ url('/') }}">
+               教程
+            </a>
+
+            <a class="navbar-brand" href="{{ url('/') }}">
+               问答
+            </a>
+
+            <a class="navbar-brand" href="{{ url('/') }}">
+               公告
+            </a>
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
