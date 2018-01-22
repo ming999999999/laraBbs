@@ -23,17 +23,6 @@
                分享
             </a>
 
-            <a class="navbar-brand" href="{{ url('/') }}">
-               教程
-            </a>
-
-            <a class="navbar-brand" href="{{ url('/') }}">
-               问答
-            </a>
-
-            <a class="navbar-brand" href="{{ url('/') }}">
-               公告
-            </a>
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -60,7 +49,17 @@
                          <ul class="dropdown-menu" role="menu">
 
                              <li>
+                                <a href="{{ route('users.show', Auth::id()) }}">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    个人中心
+                                </a>
+                            </li>
+
+
+                             <li>
                                 <a href="{{ route('users.edit', Auth::id()) }}">
+
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                     编辑资料
                                 </a>
                             </li>
@@ -70,6 +69,7 @@
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
+                                   <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
                                     退出登录
                                 </a>
 

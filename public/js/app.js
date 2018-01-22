@@ -43007,7 +43007,7 @@ if (false) {
 /* 42 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\nundefined\r\n                   ^\r\n      Invalid CSS after \"...ar-static-top {\": expected \"}\", was \".\"\r\n      in D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\resources\\assets\\sass\\app.scss (line 119, column 21)\n    at runLoaders (D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.<anonymous> (D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\node_modules\\async\\dist\\async.js:2257:31)\n    at Object.callback (D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\node_modules\\async\\dist\\async.js:958:16)\n    at options.error (D:\\Wamp\\wamp64\\www\\Laravel\\larabbs\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ })
 /******/ ]);
