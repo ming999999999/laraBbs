@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
+use App\Models\Topic;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -18,6 +20,11 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         \Carbon\Carbon::setLocale('zh');
+
+        User::observe(UserObserver::class);
+
+        Topic::observe(TopicObserve::class);
+
     }
 
     /**
