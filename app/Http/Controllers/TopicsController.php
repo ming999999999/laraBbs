@@ -10,6 +10,9 @@ use App\Models\Category;
 use App\Handlers\ImageUploadHandler;
 use Auth;
 
+use App\Jobs\TranslateSlug;
+use App\Models\SlugTranslateHandler;
+
 class TopicsController extends Controller
 {
     public function __construct()
@@ -47,6 +50,15 @@ class TopicsController extends Controller
 		$topic->fill($request->all());
 
 		$topic->user_id = Auth::id();
+
+		 //如字段无内容,及时用翻译器对title进行翻译
+  			if(! $topic->slug)
+  			{
+  				// 推送任务到队列
+  				dispatch(new TranslateSlug($topic));
+  			}
+		
+		
 
 		$topic->save();
 
