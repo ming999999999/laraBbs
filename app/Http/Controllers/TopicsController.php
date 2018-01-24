@@ -33,6 +33,7 @@ class TopicsController extends Controller
 
     public function show(Topic $topic)
     {
+
         return view('topics.show', compact('topic'));
     }
 
@@ -51,6 +52,8 @@ class TopicsController extends Controller
 
 		$topic->user_id = Auth::id();
 
+
+
 		 //如字段无内容,及时用翻译器对title进行翻译
   			if(! $topic->slug)
   			{
@@ -58,8 +61,6 @@ class TopicsController extends Controller
   				dispatch(new TranslateSlug($topic));
   			}
 		
-		
-
 		$topic->save();
 
 		return redirect()->route('topics.show', $topic->id)->with('message', '创建成功');
