@@ -47,7 +47,8 @@
                         <a href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}">Ta 的回复</a>
                     </li>
                 </ul>
-                @if (if_query('tab', 'replies'))
+
+                @if (1)
                     @include('users._replies', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])
                 @else
                     @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)])

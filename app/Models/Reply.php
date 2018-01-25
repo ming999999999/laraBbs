@@ -2,21 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model as EloquentModel;
-
-
-class Reply extends EloquentModel
+class Reply extends Model
 {
-    protected  $fillable = ['content'];
+    protected $fillable = ['topic_id', 'user_id', 'content'];
+
 
     public function topic()
     {
-
     	return $this->belongsTo(Topic::class);
+
     }
 
     public function user()
     {
+
     	return $this->belongsTo(User::class);
     }
 }
