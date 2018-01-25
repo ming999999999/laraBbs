@@ -16,4 +16,10 @@ class Model extends EloquentModel
         return $query->orderBy('order', 'desc');
     }
 
+    public function scopeLink($query)
+    {
+
+    	
+    }
+
 }
