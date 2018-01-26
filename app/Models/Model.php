@@ -19,7 +19,7 @@ class Model extends EloquentModel
     public function scopeLink($query)
     {
 
-    	
+        return $query->orderBy('id', 'desc');
     }
 
 }
