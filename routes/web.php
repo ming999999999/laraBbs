@@ -44,3 +44,7 @@ Route::resource('replies', 'RepliesController', ['only' => ['store','destroy']])
 
 // 
 Route::resource('notifications','NotificationsController',['only'=>['index']]);
+
+
+// 角色权限测试路由
+Route::get('upr','UprController@index')->name('upr');

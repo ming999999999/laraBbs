@@ -13,6 +13,8 @@ use Auth;
 use App\Jobs\TranslateSlug;
 use App\Models\SlugTranslateHandler;
 
+
+
 class TopicsController extends Controller
 {
     public function __construct()
@@ -22,7 +24,6 @@ class TopicsController extends Controller
 
 	public function index(Request $request,Topic $topic)
 	{
-		// $topics = Topic::paginate(30);
 
 		$topics = $topic->withOrder($request->order)->paginate(20);
 		
