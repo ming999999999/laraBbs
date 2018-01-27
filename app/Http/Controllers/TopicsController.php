@@ -25,6 +25,14 @@ class TopicsController extends Controller
 	public function index(Request $request,Topic $topic)
 	{
 
+		// setting($key,default='',$setting_name = 'site');
+
+		// $site_name = setting('site_name');
+
+		// $site_name = setting('site_name','默认站点名称');
+
+		// dd($site_name);
+
 		$topics = $topic->withOrder($request->order)->paginate(20);
 		
 		// $topics = Topic::with('user','category')->paginate(30);

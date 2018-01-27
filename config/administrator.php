@@ -47,6 +47,9 @@ return array(
             'topic',
             'replies',
         ],
+        '站点管理'=>[
+            'settings.site',
+        ],
     ],
 
     /*
