@@ -12,6 +12,7 @@ use Auth;
 
 use App\Jobs\TranslateSlug;
 use App\Models\SlugTranslateHandler;
+use App\Models\User;
 
 
 
@@ -22,22 +23,20 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function index(Request $request,Topic $topic)
+	public function index(Request $request,Topic $topic, User $user)
 	{
 
-		// setting($key,default='',$setting_name = 'site');
-
-		// $site_name = setting('site_name');
-
-		// $site_name = setting('site_name','默认站点名称');
-
-		// dd($site_name);
+		
 
 		$topics = $topic->withOrder($request->order)->paginate(20);
+
+		$active_users = $user->getActiveUsers();
+
+		
 		
 		// $topics = Topic::with('user','category')->paginate(30);
 		
-		return view('topics.index', compact('topics'));
+		return view('topics.index', compact('topics','active_users'));
 	}
 
     public function show(Topic $topic)
