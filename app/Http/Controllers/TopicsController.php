@@ -13,6 +13,8 @@ use Auth;
 use App\Jobs\TranslateSlug;
 use App\Models\SlugTranslateHandler;
 use App\Models\User;
+use App\Models\Link;
+use Cache;
 
 
 
@@ -23,7 +25,7 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function index(Request $request,Topic $topic, User $user)
+	public function index(Request $request,Topic $topic, User $user,Link $link)
 	{
 
 		
@@ -32,11 +34,11 @@ class TopicsController extends Controller
 
 		$active_users = $user->getActiveUsers();
 
+		$linkFlash = $link->cacheFlash();
+
+		$links = $link->getAllCached();
 		
-		
-		// $topics = Topic::with('user','category')->paginate(30);
-		
-		return view('topics.index', compact('topics','active_users'));
+		return view('topics.index', compact('topics','active_users','links'));
 	}
 
     public function show(Topic $topic)

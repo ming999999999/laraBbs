@@ -110,7 +110,7 @@ trait ActiveUserHelper
 
     private function cacheActiveUsers($active_users)
     {
-        // 将数据放入缓存中
+        //将数据放入缓存中
         Cache::put($this->cache_key, $active_users, $this->cache_expire_in_minutes);
     }
 }

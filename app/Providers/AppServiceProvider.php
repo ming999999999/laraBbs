@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Models\User;
 use App\Models\Topic;
+use App\Models\Link;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -24,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
         User::observe(UserObserver::class);
 
         Topic::observe(TopicObserve::class);
+
+        Link::observe(LinkObserve::class);
 
     }
 
