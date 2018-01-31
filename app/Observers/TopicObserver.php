@@ -6,6 +6,7 @@ use App\Models\Topic;
 use App\Models\SlugTranslateHandler;
 use App\Jobs\TranslateSlug;
 
+
 // creating, created, updating, updated, saving,
 // saved,  deleting, deleted, restoring, restored
 
@@ -53,4 +54,5 @@ class TopicObserver
         //     dispatch(new TranslateSlug($topic));
         // }
     }
+
 }

@@ -44,7 +44,7 @@ return array(
         ],
         '内容管理'=>[
             'categories',
-            'topic',
+            'topics',
             'replies',
         ],
         '站点管理'=>[
