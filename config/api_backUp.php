@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'standardsTree' => env('API_STANDARDS_TREE', 'prs'),
+    'standardsTree' => env('API_STANDARDS_TREE', 'x'),
 
     /*
     |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ return [
     |
     */
 
-    'subtype' => env('API_SUBTYPE', 'larabbs'),
+    'subtype' => env('API_SUBTYPE', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -58,7 +58,7 @@ return [
     |
     */
 
-    'prefix' => env('API_PREFIX', "api"),
+    'prefix' => env('API_PREFIX', null),
 
     /*
     |--------------------------------------------------------------------------
