@@ -52,3 +52,4 @@ Route::get('upr','UprController@index')->name('upr');
 
 // 无权限提醒路由
 Route::get('permission-denied','PagesController@permissionDenied')->name('permission-denied');
+

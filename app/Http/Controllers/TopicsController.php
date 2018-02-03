@@ -20,6 +20,9 @@ use Cache;
 
 class TopicsController extends Controller
 {
+
+	// use \Traits\SmsHelper;
+
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
@@ -28,7 +31,6 @@ class TopicsController extends Controller
 	public function index(Request $request,Topic $topic, User $user,Link $link)
 	{
 
-		
 
 		$topics = $topic->withOrder($request->order)->paginate(20);
 
@@ -130,4 +132,6 @@ class TopicsController extends Controller
 
 		return $data;
 	}
+
+
 }
