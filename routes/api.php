@@ -32,11 +32,6 @@ $api->version('v1', [
     $api->post('users','UsersController@store')->name('api.users.store');
 });
 
-
-  
-
-
-
 // Route::namespace('App\Http\Controllers\Api')->group(function()
 // 	{
 // 		Route::post('verificationCodes','VerificationCodesController@store')->name('api.verificationCodes.store');
