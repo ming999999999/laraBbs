@@ -8,7 +8,7 @@ use App\Http\Requests\Api\VerificationCodeRequest;
 class VerificationCodesController extends Controller
 {
 
-    public function store(VerificationCodeRequest $request)
+    public function store(VerificationCodeRequest $request)  
     {
 
         // return $this->response->array(['test_message' => 'store verification code']);
@@ -33,7 +33,23 @@ class VerificationCodesController extends Controller
 	    curl_setopt($ch, CURLOPT_POST, 1);
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
+        // $captchaData = \Cache::get($request->captcha_key);
 
+        // if(!$captchaData)
+        // {
+        //     return $this->response->error('图片验证码已经失效',422);
+        // }
+
+        // if(!hash_equals($captchaData['code'],$request->captcha_code))
+        // {
+        //     \Cache::forget($request->captcha_key);
+
+        //     return $this->response->errorUnauthorized('验证码错误');
+        // }
+
+        // $phone = $captchaData['phone'];
+
+        // 生成4位验证码,左侧补0;
         $data = str_pad(random_int(1,9999),4,0,STR_PAD_LEFT);
 
         if(!app()->environment('production'))

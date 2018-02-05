@@ -14,6 +14,7 @@ class UsersController extends Controller
         $verifyData = \Cache::get($request->verification_key);
         
        if (!$verifyData) {
+            
             return $this->response->error('验证码已失效', 422);
         }
 
