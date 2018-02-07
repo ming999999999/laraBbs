@@ -13,6 +13,7 @@ return [
             'yunpian',
         ],
     ],
+
     // 可用的网关配置
     'gateways' => [
         'errorlog' => [

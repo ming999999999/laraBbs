@@ -40,13 +40,22 @@ $api->version('v1', [
     // 图片验证
     $api->post('captchas','CaptchasController@store')->name('api.captchas.store');
 
-	});
+	// 第三方登录
+	$api->post('socials/{social_type}/authorizations', 'AuthorizationsController@socialStore')
+		->name('api.socials.authorizations.store');
 
+	// 登录
+		$api->post('authorizations','AuthorizationsController@store')->name('api.authorizations.store');
+
+	//刷新token
+	$api->put('authorizations/current','AuthorizationsController@update')->name('api.authorizations.update');
+
+	//删除token
+	$api->delete('authorizations/current','AuthorizationsController@destroy')->name('api.authorizations.destroy'); 
+
+	});
 });
 
-// Route::namespace('App\Http\Controllers\Api')->group(function()
-// 	{
-// 		Route::post('verificationCodes','VerificationCodesController@store')->name('api.verificationCodes.store');
-// 	});
+
 
 

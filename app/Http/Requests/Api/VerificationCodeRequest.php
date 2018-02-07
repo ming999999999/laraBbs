@@ -17,10 +17,10 @@ class VerificationCodeRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'phone' => 'required|regex:/^1[34578]\d{9}$/|unique:users',
+            //'phone'=>'required|regex:/^1[35678]\d{9}$/unique:users',
 
-            'captcha_key'=>'required|string',
-            'captcha_code'=>'required|string',
+            //'captcha_key'=>'required|string',
+            //'captcha_code'=>'required|string',
         ];
     }
 
@@ -28,10 +28,7 @@ class VerificationCodeRequest extends FormRequest
     {
 
         return [
-
-            'captcha_key'=>'图片验证码key',
-            'captcha_code'=>'图片验证码',
-            
+            'phone' => 'required|regex:/^1[34578]\d{9}$/|unique:users',
         ];
     }
 }
