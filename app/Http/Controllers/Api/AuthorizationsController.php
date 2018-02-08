@@ -73,33 +73,26 @@ class AuthorizationsController extends Controller
 
         $credentials['password'] = $request->password;
 
-//      $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbGFyYWJicy50ZXN0IiwiaWF0IjoxNTE3O
-// Tg4MTk2LCJleHAiOjE1MTc5ODgxOTYsIm5iZiI6MTUxNzk4ODE5NiwianRpIjoiTkF4VGk2Tzl3dEhYbzdaNCIsInN1YiI
-// 6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.VhQXQ4iaaEQxIPeQkenHAQCm
-// XcDsElmtgcOdV71BKpM';
-
         if(!$token = \Auth::guard('api')->attempt($credentials))
             {
                 return $this->response->errorUnauthorized('用户密码错误');
             }
 
-
-
-        // return $this->response->array([
-        //     'access_token'=>$token,
-        //     'token_type'=>'Bearer',
-        //     'expires_in'=>\Auth::guard('api')->factory()->getTTL()*60
-        // ])->setStatusCode(201);
-    }
-
-    protected function respondWithToken($token)
-    {
         return $this->response->array([
             'access_token'=>$token,
             'token_type'=>'Bearer',
             'expires_in'=>\Auth::guard('api')->factory()->getTTL()*60
-        ]);
+        ])->setStatusCode(201);
     }
+
+    // protected function respondWithToken($token)
+    // {
+    //     return $this->response->array([
+    //         'access_token'=>$token,
+    //         'token_type'=>'Bearer',
+    //         'expires_in'=>\Auth::guard('api')->factory()->getTTL()*60
+    //     ]);
+    // }
 
 
     public function  update()
