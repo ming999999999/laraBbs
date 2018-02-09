@@ -85,14 +85,14 @@ class AuthorizationsController extends Controller
         ])->setStatusCode(201);
     }
 
-    // protected function respondWithToken($token)
-    // {
-    //     return $this->response->array([
-    //         'access_token'=>$token,
-    //         'token_type'=>'Bearer',
-    //         'expires_in'=>\Auth::guard('api')->factory()->getTTL()*60
-    //     ]);
-    // }
+    protected function respondWithToken($token)
+    {
+        return $this->response->array([
+            'access_token'=>$token,
+            'token_type'=>'Bearer',
+            'expires_in'=>\Auth::guard('api')->factory()->getTTL()*60
+        ]);
+    }
 
 
     public function  update()
