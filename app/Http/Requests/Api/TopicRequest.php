@@ -25,7 +25,7 @@ class TopicRequest extends FormRequest
     {
         return [
             'title'=>'required|string',
-            'content'=>'required|string',
+            'body'=>'required|string',
             'category_id'=>'required|exists:categories,id',
         ];
     }
@@ -34,7 +34,7 @@ class TopicRequest extends FormRequest
     {
         return [
             'title'=>'标题',
-            'content'=>'话题内容',
+            'body'=>'话题内容',
             'category_id'=>'分类',
         ];
     }
