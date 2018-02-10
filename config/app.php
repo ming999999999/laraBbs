@@ -180,6 +180,9 @@ return [
         // 短信provider
        App\Providers\EasySmsServiceProvider::class,
 
+       // 添加dingo
+       Dingo\Api\Provider\LaravelServiceProvider::class,
+
 
     ],
 
