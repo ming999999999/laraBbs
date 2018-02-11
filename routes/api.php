@@ -52,8 +52,22 @@ $api->version('v1', [
 
 	$api->get('users/{user}/topics','TopicsController@userIndex')->name('api.users.topics.index');
 
+	$api->get('topics/{topic}','TopicsController@show')->name('api.topics.show');
+
 	});
 
+	// 需要token验证的接口
+	$api->group(['middleware'=>'api.auth'],function($api)
+				{
+					// 当前登录用户的信息
+					$api->get('user','UserController@me')->name('api.user.show');
+
+					// 图片资源
+					$api->post('images','ImagesController@store')->name('api.images.store');
+
+					// 编辑登录用户信息
+					$api->patch('user', 'UsersController@update')->name('api.user.update');
+				});
 
 	
 
